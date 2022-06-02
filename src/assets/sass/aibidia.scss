@@ -1,0 +1,42 @@
+// Import Bulma's core
+@import '~bulma/sass/utilities/_all';
+
+// Import our own Bulma/Buefy color scheme
+// This overwrites default Bulma/Buefy colors
+@import './color.scss';
+
+// Import our font styles
+// This overwrites default Bulma/Buefy fonts
+@import './core/font.scss';
+
+// Import component related variables
+// This overwrites default Bulma/Buefy variables
+@import './buefy/variables.scss';
+
+// Import our sizes
+// This overwrites default Bulma/Buefy sizes
+@import './buefy/sizes.scss';
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+// Import layout classes
+@import './core/layout.scss';
+
+// Contains overwritten Bulma/Buefy classes
+// - .menu-list
+// - label.label
+// - .modal-card
+// - .button
+//   - .is-primary
+//   - .is-danger
+//   - .is-success
+// - input[type=radio]
+//   - .b-radio
+//   - .radio
+// - .tooltip
+// - .b-checkbox
+// - .switch
+// - .table
+@import './buefy/overrides.scss';

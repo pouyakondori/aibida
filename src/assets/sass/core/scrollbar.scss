@@ -1,0 +1,28 @@
+
+// Scrollbar
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $grey-lighter;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $purple-light;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $purple-lighter;
+}
+
+/* Firefox Scrollbar colors */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $purple-light $grey-lighter;
+}

@@ -1,0 +1,89 @@
+// Bulma's initial typography
+// $family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default
+// $family-monospace: monospace !default
+// $render-mode: optimizeLegibility !default
+
+// $weight-light: 300 !default
+// $weight-normal: 400 !default
+// $weight-medium: 500 !default
+// $weight-semibold: 600 !default
+// $weight-bold: 700 !default
+
+// Bulma's derived typography
+
+// $family-primary: $family-sans-serif !default
+// $family-code: $family-monospace !default
+
+//
+// Bulma's default title variables
+//
+
+// $title-color: $grey-darker !default
+// $title-size: $size-3 !default
+// $title-weight: $weight-semibold !default
+// $title-strong-color: inherit !default
+// $title-strong-weight: inherit !default
+// $title-sub-size: 0.75em !default
+// $title-sup-size: 0.75em !default
+// $subtitle-color: $grey-dark !default
+// $subtitle-size: $size-5 !default
+// $subtitle-weight: $weight-normal !default
+// $subtitle-strong-color: $grey-darker !default
+// $subtitle-strong-weight: $weight-semibold !default
+
+// Fonts
+$family-primary: Lato, sans-serif;
+$font-medium: 12px;
+$title-weight: 500;
+$label-weight: 500;
+$info-weight: 600;
+
+// Text styling
+.text {
+    &--underline {
+        text-decoration: underline;
+    }
+
+    &--bold {
+        font-weight: bold;
+    }
+
+    &--break-pre-line {
+        white-space: pre-line;
+    }
+
+    &--break-word {
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    &--break-all {
+        word-break: break-all;
+    }
+
+    &--nowrap {
+        white-space: nowrap;
+    }
+
+    &--align-right {
+        text-align: right;
+    }
+
+    &--ellipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &-hoverable:hover {
+            word-wrap: break-word;
+            white-space: normal;
+        }
+    }
+
+    &--attachment-link {
+        text-decoration: underline;
+        color: $purple;
+        cursor: pointer;
+        padding-right: 5px;
+    }
+}

@@ -1,0 +1,304 @@
+@import '../color.scss';
+@import './variables.scss';
+@import './scrollbar.scss';
+
+// Global styles
+html {
+    overflow: hidden;
+}
+
+body {
+    background-color: $white-bg;
+}
+
+/* // Enable this to debug layout
+* {
+  border: 1px solid #ff0000 !important;
+}
+/**/
+
+// Menu's arrow
+.toggle-arrow {
+    padding-left: 6px;
+    cursor: pointer;
+    &:hover {
+        color: $purple-light;
+    }
+}
+
+
+// Pointer cursor
+.pointer {
+    cursor: pointer;
+}
+
+// Depth classes
+.depth-8 {
+    box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132),
+        0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+}
+
+// Flexbox container classes
+.flex-container {
+    display: flex;
+
+    &--row {
+        @extend .flex-container;
+        flex-direction: row;
+    }
+
+    &--column {
+        @extend .flex-container;
+        flex-direction: column;
+    }
+}
+
+.inline-flex-container {
+    display: inline-flex;
+
+    &--row {
+        @extend .flex-container;
+        flex-direction: row;
+    }
+
+    &--column {
+        @extend .flex-container;
+        flex-direction: column;
+    }
+}
+
+// Basic flex-item class
+.flex-item {
+    flex: auto;
+}
+
+// Flex item utility classes
+.flex-item--nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-item--grow-0 {
+    flex-grow: 0;
+}
+
+.flex-item--shrink-0 {
+    flex-shrink: 0;
+}
+
+.flex-item--grow-1 {
+    flex-grow: 1;
+}
+
+.flex-item--shrink-1 {
+    flex-shrink: 1;
+}
+
+// Overflow utility classes
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden !important;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+// Position utility classes
+.position {
+    &--relative {
+        position: relative;
+    }
+
+    &--absolute {
+        position: absolute;
+    }
+
+    &--fixed {
+        position: fixed;
+    }
+}
+
+.float {
+    &--right {
+        float: right;
+    }
+
+    &--left {
+        float: left;
+    }
+}
+
+.centered {
+    text-align: center;
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+// Size utlity classes
+.fill-height {
+    height: 100%;
+}
+
+.fill-width {
+    width: 100%;
+}
+
+.fill-height-half {
+    height: 50%;
+}
+
+.fill-width-half {
+    width: 50%;
+}
+
+// Utility classes
+.display {
+    &--block {
+        display: block;
+    }
+
+    &--inline-block {
+        display: inline-block;
+    }
+}
+
+// Percentual widths
+$percentIterations: 20;
+
+@mixin percentWidthClasses {
+    @for $i from 1 through $percentIterations {
+        //Padding on all sides
+        $width: $i * 5;
+
+        .width-#{$width}-pct {
+            width: $width * 1%;
+            @media only screen and (min-width: 769px) {
+                &.aibidia-column {
+                    flex: none;
+                }
+                &.column {
+                    flex: none;
+                }
+            }
+        }
+    }
+}
+
+@include percentWidthClasses;
+
+// Percentual heights
+@mixin percentHeightClasses {
+    @for $i from 1 through $percentIterations {
+        //Padding on all sides
+        $height: $i * 5;
+
+        .height-#{$height}-pct {
+            height: $height * 1%;
+        }
+    }
+}
+
+@include percentHeightClasses;
+
+// Programatically create padding classes
+$paddingSizes: 4;
+
+@mixin paddingClasses {
+    @for $i from 1 through $paddingSizes {
+        //Padding on all sides
+        .padding-#{$i} {
+            padding: $default-gap * $i;
+        }
+
+        //padding vertically
+        .padding-v-#{$i} {
+            padding-top: $default-gap * $i;
+            padding-bottom: $default-gap * $i;
+        }
+
+        //padding horizontally
+        .padding-h-#{$i} {
+            padding-left: $default-gap * $i;
+            padding-right: $default-gap * $i;
+        }
+
+        //padding top
+        .padding-t-#{$i} {
+            padding-top: $default-gap * $i;
+        }
+
+        //padding right
+        .padding-r-#{$i} {
+            padding-right: $default-gap * $i;
+        }
+
+        //padding bottom
+        .padding-b-#{$i} {
+            padding-bottom: $default-gap * $i;
+        }
+
+        //padding left
+        .padding-l-#{$i} {
+            padding-left: $default-gap * $i;
+        }
+
+    }
+}
+
+@include paddingClasses;
+
+// Programatically create margin classes
+$marginSizes: 4;
+
+@mixin marginClasses {
+    @for $i from 0 through $marginSizes {
+        //Padding on all sides
+        .margin-#{$i} {
+            margin: $default-gap * $i;
+        }
+
+        //margin vertically
+        .margin-v-#{$i} {
+            margin-top: $default-gap * $i;
+            margin-bottom: $default-gap * $i;
+        }
+
+        //margin horizontally
+        .margin-h-#{$i} {
+            margin-left: $default-gap * $i;
+            margin-right: $default-gap * $i;
+        }
+
+        //margin top
+        .margin-t-#{$i} {
+            margin-top: $default-gap * $i;
+        }
+
+        //margin right
+        .margin-r-#{$i} {
+            margin-right: $default-gap * $i;
+        }
+
+        //margin bottom
+        .margin-b-#{$i} {
+            margin-bottom: $default-gap * $i;
+        }
+
+        //padding left
+        .margin-l-#{$i} {
+            margin-left: $default-gap * $i;
+        }
+    }
+}
+
+@include marginClasses;

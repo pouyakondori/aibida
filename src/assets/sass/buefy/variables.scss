@@ -1,0 +1,183 @@
+//
+// Variables in this file will override all Bulma's/Buefy's default variables
+// NOTE FOR EDITOR: DO NOT REMOVE COMMENTED DEFAULT VARIABLES FROM THIS FILE!
+//
+
+//
+// Bulma's general colors
+//
+
+// $background: $white-ter !default
+$background: $white-ter;
+// $border: $grey-lighter !default
+$border: $grey-lighter;
+// $border-hover: $grey-light !default
+$border-hover: $grey-light;
+
+//
+// Bulma's text colors
+//
+
+// $text: $grey-dark !default
+$text: $grey-dark;
+// $text-invert: findColorInvert($text) !default
+$text-invert: findColorInvert($text);
+// $text-light: $grey !default
+$text-light: $grey;
+// $text-strong: $grey-darker !default
+$text-strong: $grey-darker;
+
+// Bulma's code colors
+
+// $code: $red !default
+$code: $red;
+// $code-background: $background !default
+$code-background: $background;
+
+// $pre: $text !default
+$pre: $text;
+// $pre-background: $background !default
+$pre-background: $background;
+
+//
+// Bulma's link colors
+//
+
+// $link-visited: $purple !default
+$link-visited: $purple;
+
+// $link-hover: $grey-darker !default
+$link-hover: $grey-darker;
+// $link-hover-border: $grey-light !default
+$link-hover-border: $grey-light;
+
+// $link-focus: $grey-darker !default
+$link-focus: $grey-darker;
+// $link-focus-border: $blue !default
+$link-focus-border: $blue;
+
+// $link-active: $grey-darker !default
+$link-active: $grey-darker;
+// $link-active-border: $grey-dark !default
+$link-active-border: $grey-dark;
+
+//
+// Buefy's variables
+//
+
+// Checkbox
+// $checkbox-active-background-color: $primary !default;
+$checkbox-active-background-color: $primary;
+// $checkbox-checkmark-color: $primary-invert !default;
+$checkbox-checkmark-color: $primary-invert;
+// $checkbox-background-color: transparent !default;
+$checkbox-background-color: $white;
+
+// Snackbar
+// $snackbar-background-color: $dark !default;
+$snackbar-background-color: $dark;
+
+// Radio
+// $radio-active-background-color: $primary !default;
+$radio-active-background-color: $primary;
+
+// Switch
+// $switch-active-background-color: $primary !default;
+$switch-active-background-color: $primary;
+
+//
+// Bulma's misc
+//
+
+// $radius-small: 2px !default
+$radius-small: 2px;
+// $radius: 3px !default
+$radius: 3px;
+// $radius-large: 5px !default
+$radius-large: 5px;
+
+
+// Override Bulma's default input style variables
+// $input-hover-border-color: $grey-light !default
+$input-hover-border-color: $primary;
+// $input-focus-border-color: $link !default
+$input-focus-border-color: $primary;
+// $input-focus-box-shadow-size: 0 0 0 0.125em !default
+$input-focus-box-shadow-size: 0 0 0 0.125em;
+// $input-focus-box-shadow-color: rgba($link, 0.25) !default
+$input-focus-box-shadow-color: rgba(32, 156, 238, 0.12);
+// $input-arrow: $link !default
+$input-arrow: $primary;
+
+// Override Bulma's default menu style variables
+// $menu-label-color: $text-light !default
+$menu-label-color: $white;
+// $menu-item-color: $text !default
+$menu-item-color: $grey-light;
+
+// $menu-item-hover-color: $text-strong !default
+$menu-item-hover-color: $white;
+// $menu-item-hover-background-color: $background !default
+$menu-item-hover-background-color: $grey-darker;
+// $menu-item-radius: $radius-small !default
+$menu-item-radius: $radius-small;
+// $menu-item-active-color: $link-invert !default
+$menu-item-active-color: $white;
+// $menu-item-active-background-color: $link !default
+$menu-item-active-background-color: $grey-darker;
+
+// Override Bulma's default table style variables
+// $content-table-cell-border-width: 0 0 1px !default
+$table-cell-border-width: 0 0 2px;
+// $table-cell-border: 1px solid $grey-lighter !default
+$table-cell-border: 1px solid $grey-table-border;
+// $table-striped-row-even-background-color: $white-bis !default
+$table-striped-row-even-background-color: $grey-lightest;
+
+// Override Bulma's default modal style variables
+// $modal-card-title-size: $size-4 !default
+$modal-card-title-size: $size-6;
+// $modal-card-title-color: $text-strong !default
+$modal-card-title-color: $white;
+// $modal-card-head-background-color: $background !default
+$modal-card-head-background-color: $purple;
+
+// Override Bulma's default card style variables
+// $card-header-color: $text-strong !default
+$card-header-color: $white;
+// $card-header-background-color: transparent !default
+$card-header-background-color: $purple;
+// $card-content-padding: 1.5rem !default
+$card-content-padding: 0.5rem;
+
+// Override Bulma's default link style variables
+// $link-focus-border: $blue !default
+$link-focus-border: $link;
+
+// Override Bulma's default tabs style variables
+// Tabs
+// $tabs-link-color: $text !default
+$tabs-link-color: $white;
+// $tabs-link-hover-border-bottom-color: $text-strong !default
+$tabs-link-hover-border-bottom-color: $purple;
+// $tabs-link-hover-color: $text-strong !default
+$tabs-link-hover-color: $white;
+// $tabs-link-active-color: $link !default
+$tabs-link-active-color: $black;
+// $tabs-boxed-link-radius: $radius !default
+$tabs-boxed-link-radius: 10px;
+// $tabs-link-padding: 0.5em 1em !default
+$tabs-link-padding: 0.5em 0;
+// $tabs-boxed-link-hover-background-color: $background !default
+$tabs-boxed-link-hover-background-color: lighten($purple, $hover-lighten-pct);
+// $tabs-boxed-link-active-background-color: $white !default
+$tabs-boxed-link-active-background-color: $white;
+
+// Override Bulma's default form control sizes.
+// In version 0.8.0 the default size was increased and we don't want that.
+// https://github.com/jgthms/bulma/blob/master/CHANGELOG.md#080
+$control-height: 2.25em;
+$control-padding-vertical: calc(0.375em - 1px);
+$control-padding-horizontal: calc(0.625em - 1px);
+$button-padding-vertical: calc(0.375em - 1px);
+$button-padding-horizontal: 0.75em;

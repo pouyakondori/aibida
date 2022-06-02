@@ -1,0 +1,25 @@
+module.exports = {
+    collectCoverage: false,
+    collectCoverageFrom: ['src/**/*.{ts,js,vue}', '!**/node_modules/**'],
+    coverageReporters: ['text-summary'],
+    moduleFileExtensions: ['ts', 'js', 'json', 'vue'],
+    moduleNameMapper: {
+        '^@/(.*)$': '<rootDir>/src/$1',
+        '^src/(.*)': '<rootDir>/src/$1',
+        '^misc/(.*)': '<rootDir>/src/misc/$1',
+        '^lib/(.*)': '<rootDir>/src/lib/$1',
+        '^assets/(.*)': '<rootDir>/src/assets/$1',
+        '^components/(.*)': '<rootDir>/src/components/$1',
+        '^views/(.*)': '<rootDir>/src/views/$1',
+        '^store/(.*)': '<rootDir>/src/store/$1',
+        '^types/(.*)': '<rootDir>/src/types/$1',
+    },
+    transform: {
+        '.*\\.(vue)$': 'vue-jest',
+        '^.+\\.ts?$': 'ts-jest',
+        '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
+    },
+    roots: ['<rootDir>/src/'],
+    setupFiles: ['<rootDir>/jest.init.js'],
+    testMatch: ['**/__tests__/**/*.[jt]s', '**/*.spec.[jt]s'],
+}

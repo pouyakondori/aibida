@@ -1,0 +1,22 @@
+// Dark background for showing logo
+.background-black {
+    background-color: #181818;
+    height: 100vh;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    .logo-container {
+        width: 15em;
+        margin: 0 auto;
+        width: fill;
+    }
+
+    .logo-big {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        // background-image: url(~assets/Aibidia_logo.svg); // TODO: Fix image size and positioning
+        height: 190px;
+    }
+}

@@ -1,0 +1,8 @@
+
+// Variables
+$aibidia-menu-width: 220px;
+
+// Default gap used in applications, this is used to define paddings/margins
+$default-gap: 0.375rem;
+// Overwrite Bulma's default $column-gap
+$column-gap: $default-gap;

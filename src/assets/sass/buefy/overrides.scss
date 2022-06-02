@@ -1,0 +1,519 @@
+@import '../color.scss';
+
+// Override Bulma's modal styles
+.modal-card {
+    overflow: visible;
+
+    .modal-card-body {
+        overflow-y: auto;
+        > .media {
+            > .media-content {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .modal-card-foot {
+        background-color: $white-ter;
+        max-height: 55px;
+
+        > button.button {
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+}
+
+.modal.is-active {
+    z-index: 999;
+}
+
+// Override Bulma's label style
+// Input labels
+label.label {
+    font-size: calc(1em - 1px);
+    text-align: left;
+    color: $grey;
+
+    &:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    &:after {
+        content: ':';
+    }
+}
+
+.field {
+    p:nth-child(2) {
+        margin-top: 0.5em;
+    }
+}
+
+// Override Bulma's button styles
+.button {
+    @each $name, $pair in $colors {
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+        &.is-#{$name}:hover {
+            background-color: lighten($color, $hover-lighten-pct);
+        }
+        &.is-#{$name}:disabled {
+            opacity: 0.5;
+        }
+    }
+}
+
+// Add is-primary, is-success etc. classes for i-tag.
+i {
+    @each $name, $pair in $colors {
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+        &.is-#{$name} {
+            color: $color;
+        }
+    }
+}
+
+// Add is-primary, is-success etc. classes for label-tag.
+label {
+    @each $name, $pair in $colors {
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+        &.is-#{$name} {
+            background-color: $color;
+        }
+    }
+}
+
+// Override Bulma's textarea styles
+.textarea {
+    padding: 0;
+    // Padding set identical with .input
+    padding-bottom: calc(0.375em - 1px);
+    padding-left: calc(0.625em - 1px);
+    padding-right: calc(0.625em - 1px);
+    padding-top: calc(0.375em - 1px);
+}
+
+// Overwrite default number input styles
+.input {
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    /* Firefox */
+    &[type=number] {
+        -moz-appearance: textfield;
+    }
+}
+
+// Override Bulma's checkbox styles
+.b-checkbox.checkbox input[type='checkbox'] + .check {
+    border: 1px solid $grey-light;;
+}
+
+// Override Bulma's switch (checkbox) styles
+.switch--no-shadow.switch input[type=checkbox] + .check {
+    background: $primary;
+}
+
+.switch--no-shadow.switch:hover input[type=checkbox] + .check {
+    background: lighten($primary, $hover-lighten-pct);
+}
+
+.switch--no-shadow.switch:focus input[type=checkbox] + .check {
+    box-shadow: none;
+}
+
+.switch--no-shadow.switch:focus input[type=checkbox]:checked + .check{
+    box-shadow: none;
+}
+
+// Override Bulma's field help styles
+.field {
+    .help {
+        margin-top: 0;
+    }
+    &:not(:last-child) {
+        margin-bottom: 0;
+    }
+}
+
+// Override Bulmas's table styles
+.table {
+    margin-bottom: 0;
+    border-collapse: separate;
+
+    // NOTE:
+    // .table .centered needed to override Buefy's table style definitions.
+    // By default it set text-align: left if td/th does not have align-attribute set.
+    .centered {
+        text-align: center;
+        justify-content: center;
+    }
+
+    thead, tfoot {
+        tr {
+            height: 30px;
+            th {
+                vertical-align: middle;
+
+                span.columnSorting:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+
+                span.columnSorting {
+                    position: relative;
+                }
+
+                span.columnSorting.ascending:before {
+                    top: 50%;
+                    margin-top: -6px;
+                    padding-left: 8px;
+                    position: absolute;
+                    content: '';
+                    height: 10px;
+                    right: -9px;
+                    width: 5px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position-x: right;
+                    filter: brightness(0) invert(1);
+                    /* arrow up; 20 x 40 px, scaled to 5 x 10 px; base64 size: 0.3kB */
+                    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAMAAADJ7yrpAAAAKlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKE86IAAAADXRSTlMABBEmRGprlJW72e77tTkTKwAAAFNJREFUeAHtzjkSgCAUBNHPgsoy97+ulGXRqJE5L+xkxoYt2UdsLb5bqFINz+aLuuLn5rIu2RkO3fZpWENimNgiw6iBYRTPMLJjGFxQZ1hxxb/xBI1qC8k39CdKAAAAAElFTkSuQmCC");
+                }
+
+                span.columnSorting.descending:before {
+                    top: 50%;
+                    margin-top: -6px;
+                    padding-left: 8px;
+                    position: absolute;
+                    content: '';
+                    height: 10px;
+                    right: -9px;
+                    width: 5px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position-x: right;
+                    filter: brightness(0) invert(1);
+                    /* arrow down; 20 x 40 px, scaled to 5 x 10 px; base64 size: 0.3kB */
+                    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAMAAADJ7yrpAAAAKlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKE86IAAAADXRSTlMABBEmRGprlJW72e77tTkTKwAAAFJJREFUeAHtzjkSgCAQRNFmQYUZ7n9dKUvru0TmvPAn3br0QfgdZ5xx6x+rQn23GqTYnq1FDcnuzZIO2WmedVqIRVxgGKEyjNgYRjKGkZ1hFIZ3I70LyM0VtU8AAAAASUVORK5CYII=");
+                }
+
+                &.red-cell {
+                    background-color: $danger-lighter;
+                }
+
+                &::after {
+                    visibility: hidden;
+                }
+
+                &.header {
+                    &--text-ellipsis {
+                        max-width: 0;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    &--sticky {
+                        position: sticky;
+                        top: 0;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            height: 35px;
+
+            td {
+                vertical-align: middle;
+                padding: 0 4px;
+
+                &.red-cell {
+                    background-color: $danger-lighter;
+                }
+
+                &.cell--readonly {
+                    background-color: $purple-lighter;
+                    color: $grey;
+                }
+
+                &.cell--numeric {
+                    text-align: right;
+                }
+
+                &.cell--nowrap {
+                    max-width: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                input[type=number],
+                input.cell--numeric {
+                    text-align: right;
+                }
+
+                &.cell--selected {
+                    text-align: center;
+
+                    .b-checkbox {
+                        vertical-align: middle;
+                        margin-right: 0;
+                    }
+
+                    .control-label {
+                        padding-left: 0px;
+                    }
+                }
+
+                &.cell--row-number {
+                    text-align: center;
+                    justify-content: center;
+
+                    box-shadow: none !important;
+                    border-bottom: 1px solid $grey-table-border !important;
+                }
+
+                &.cell--expandable {
+                    max-width: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+
+        tr:nth-child(even) {
+            td.cell--readonly {
+                background-color: $purple-lightest;
+            }
+        }
+
+        tr:hover {
+            > td {
+                box-shadow: 0 -1px 0 0 $purple;
+                border-bottom: 1px solid $purple;
+            }
+        }
+    }
+
+    .is-hoverable {
+        cursor: pointer;
+
+        &.has-text-primary:hover {
+            color: $purple-light !important;
+        }
+    }
+}
+
+.table.is-bordered th {
+    border: 1px solid $grey-table-border;
+}
+
+.table.is-bordered th,
+.table.is-bordered td {
+    border-left-width: 0;
+}
+
+.table.is-bordered {
+    thead {
+        tr {
+            th {
+                &:first-child {
+                    border-left-width: 0px;
+                }
+                &:last-child {
+                    border-right-width: 0px;
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            td, th {
+                border-top-width: 0;
+
+                &:first-child {
+                    border-left-width: 0px;
+                }
+
+                &:last-child {
+                    border-right-width: 0px;
+                }
+            }
+        }
+    }
+}
+
+.table td.is-danger-light, .table th.is-danger-light {
+    background-color: $danger-light;
+    border-color: $grey-table-border;
+    color: #fff;
+}
+
+// // Overwrite Bulmas's tab styles
+.tabs {
+    &.is-boxed a {
+        background-color: $purple;
+    }
+    :not(:last-child) {
+        margin-right: 2px;
+    }
+}
+
+// Overwrite Bulma's default select styles
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    right: 0.75em;
+}
+
+span.select {
+    width: 100%;
+
+    select {
+        min-width: 250px;
+        width: 100%;
+    }
+
+    select[disabled]:hover {
+        border-color: $grey-lighter;
+    }
+}
+
+td span.select select {
+    min-width: 0px;
+}
+
+div.is-danger {
+    > .select select,
+    textarea {
+        border: 1pt double $danger;
+    }
+}
+
+// Added styles to b-autocomplete component
+.aibidia-autocomplete, .autocomplete {
+    input {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding-right: 25px;
+    }
+
+    .control {
+        &.has-icons-right {
+            > span.icon.is-right {
+                margin-right: 1.3em;
+            }
+        }
+
+        &::after {
+            font-size: 0.75em;
+            border: 1px solid #934bc9;
+            border-right: 0;
+            border-top: 0;
+            border-radius: 0;
+            content: " ";
+            display: block;
+            height: 0.625em;
+            pointer-events: none;
+            position: absolute;
+            transform: rotate(-45deg);
+            transform-origin: center;
+            width: 0.625em;
+            margin-top: -0.4375em;
+            right: 0.75em;
+            top: 50%;
+            z-index: 4;
+        }
+
+        &:hover::after {
+            border: 1px solid $grey-darker;
+            border-right: 0;
+            border-top: 0;
+        }
+    }
+
+    .dropdown-menu {
+        padding-top: 0px !important;
+        border-radius: 0;
+        z-index: 104 !important;
+
+        .fade-enter-to, .fade-enter-active {
+            padding-top: 0px;
+        }
+
+        .dropdown-content {
+            border-radius: 0;
+            padding-top: 0 !important;
+            padding-bottom: 0;
+            max-height: 175px;
+        }
+    }
+
+    a.dropdown-item {
+        font-size: 0.75rem;
+        padding: 0;
+        min-height: 35px;
+
+        > div {
+            min-height: 35px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 35px;
+            padding: 0;
+            padding-left: calc(0.625em - 1px);
+            padding-right: 0.375em;
+        }
+
+        &:hover {
+            background-color: $purple-lighter;
+            color: $grey-darker;
+        }
+    }
+}
+
+// Custom loading-icon class which extends Buefy's .button.is-loading
+.spinner-icon {
+    @extend .button.is-loading;
+    height: 0.75rem;
+    width: 0.75rem;
+}
+
+// Make sure disabled stays disabled
+.input[disabled],
+.textarea[disabled],
+.select select[disabled],
+td.disabled {
+    background-color: $grey-lighter;
+    border-color: $grey-lighter;
+    color: $black;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+// Modal close tick
+.close-tick {
+    color: white;
+    &:hover:not(.close-tick--disabled),
+    :active:not(.close-tick--disabled) {
+        color: $purple-lighter;
+        cursor: pointer;
+    }
+
+    &--disabled {
+        opacity: 0.4;
+    }
+}
+
