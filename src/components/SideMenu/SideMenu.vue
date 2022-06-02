@@ -11,6 +11,12 @@
                 link="/hm/introduction"
             >
             </a-side-menu-menuitem>
+            <a-side-menu-menuitem
+                label="Resume"
+                icon="fas fas-menu fa-file"
+                link="/hm/user/resume"
+            >
+            </a-side-menu-menuitem>
         </a-side-menu-section>
         <a-side-menu-section
             v-if="isDevelopment"

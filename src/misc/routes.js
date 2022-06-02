@@ -33,6 +33,20 @@ const routes = [
                     ],
                 },
             },
+            {
+                path: 'user/resume',
+                component: () =>
+                    import(
+                        /* webpackChunkName: "core" */ 'views/general/Resume.ts.vue'
+                        ),
+                meta: {
+                    section: 'General',
+                    breadcrumb: [
+                        { name: 'General' },
+                        { name: 'Pouya Kondori Resume', icon: 'fa fa-home' },
+                    ],
+                }
+            }
         ],
     },
     // Any other paths must return your 404Component now
